@@ -2,6 +2,7 @@ import tkinter
 import tkinter.messagebox
 import pyodbc
 
+
 class SQLGUI:
     def __init__(self):
 
@@ -21,8 +22,9 @@ class SQLGUI:
 
         self.label2 = tkinter.Label(self.bottom_frame, text='Password:')
         self.entry2 = tkinter.Entry(self.bottom_frame, width=30, show='*')
-        
-        self.loginbutton = tkinter.Button(self.last_frame, text='Login', command=self.do_something)
+
+        self.loginbutton = tkinter.Button(
+            self.last_frame, text='Login', command=self.do_something)
 
         #
 
@@ -55,11 +57,11 @@ class SQLGUI:
         courseList = []
         cn_str = (
 
-        'Driver={SQL Server Native Client 11.0};'
-        'Server=MIS-SQLJB'
-        'Database=School;' 
-        'UID='+login+';'
-        'PWD='+pw+';'   
+            'Driver={SQL Server Native Client 11.0};'
+            'Server=MIS-SQLJB'
+            'Database=School;'
+            'UID='+login+';'
+            'PWD='+pw+';'
 
         )
 
@@ -69,6 +71,7 @@ class SQLGUI:
 
         cursor = cn.cursor()
         cursor.execute('Select * From School.dbo.Course')
+
 
 myinstance = SQLGUI()
 
